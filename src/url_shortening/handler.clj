@@ -5,6 +5,6 @@
             [url-shortening.routes :as routes]))
 
 (def app
-  (-> 
-   (wrap-defaults routes/app-routes api-defaults) 
-   (wrap-json-body)))
+  (->
+   (wrap-defaults routes/app-routes api-defaults)
+   (wrap-json-body {:keywords? true :bigdecimals? true})))
