@@ -4,7 +4,7 @@
 
 (def client (d/client {:server-type :dev-local
                        :system "dev"
-                       :storage-dir "/tmp/datomic-local"}))
+                       :storage-dir "C:/Users/guiga/documents/datomic-local"}))
 
 (d/delete-database client {:db-name "urls"})
 

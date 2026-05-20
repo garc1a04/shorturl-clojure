@@ -1,17 +1,10 @@
 (ns url-shortening.routes
-  (:require [compojure.core :refer :all]
+  (:require [compojure.core :refer [defroutes GET POST]] 
             [compojure.route :as route]
             [cheshire.core :as json]
             [ring.util.response :as response]
             [url-shortening.encurtar :as encurtar]
-            [url-shortening.db.commands-db :as db]
-            [reitit.ring :as ring]
-            [reitit.swagger :as swagger]
-            [reitit.swagger-ui :as swagger-ui]
-            [reitit.ring.coercion :as coercion]
-            [reitit.coercion.malli :as malli]
-            [reitit.ring.middleware.muuntaja :as muuntaja]
-            [muuntaja.core :as m]))
+            [url-shortening.db.commands-db :as db]))
 
 (def api "http://localhost:3000/api/")
 

@@ -1,19 +1,36 @@
-# url_shortening
+# URL Shortener API
 
-FIXME
+Uma API funcional e performática desenvolvida em **Clojure** para encurtamento de URLs, focada em simplicidade e eficiência na persistência de dados.
 
-## Prerequisites
+## Funcionalidades
 
-You will need [Leiningen][] 2.0.0 or above installed.
+* **Encurtamento de URLs:** Conversão de URLs longas em códigos curtos exclusivos.
+* **Redirecionamento:** Resolução eficiente de códigos para as suas respectivas URLs originais.
+* **Consulta:** Listagem de todas as URLs registadas e busca detalhada por código.
+* **Health Check:** Endpoint para monitoramento da disponibilidade da API.
 
-[leiningen]: https://github.com/technomancy/leiningen
+## Tecnologias Utilizadas
 
-## Running
+* **Linguagem:** Clojure
+* **Framework Web:** Compojure (para roteamento) e Ring
+* **Serialização:** Cheshire (para JSON)
+* **Gerenciador de Dependências:** Leiningen
 
-To start a web server for the application, run:
+## Rotas da API
 
-    lein ring server
+| Método | Endpoint | Descrição |
+| :--- | :--- | :--- |
+| `GET` | `/api/health` | Verifica se o serviço está online. |
+| `GET` | `/api` | Retorna todas as URLs cadastradas. |
+| `GET` | `/api/:code` | Retorna os metadados de uma URL via código. |
+| `GET` | `/api/redirect/:code` | Redireciona o utilizador para a URL original. |
+| `POST` | `/api` | Encurta uma nova URL (recebe JSON no body). |
 
-## License
+### Exemplo de Uso (POST `/api`)
 
-Copyright © 2026 FIXME
+**Requisição:**
+```json
+{
+  "url": "[https://www.google.com](https://www.google.com)"
+}
+```
