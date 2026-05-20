@@ -1,6 +1,6 @@
 /target
 /.lsp
-/.cli-kondo
+/.clj-kondo
 /lib
 /classes
 /checkouts
